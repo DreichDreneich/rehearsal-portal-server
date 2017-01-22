@@ -1,0 +1,5 @@
+src/RehearsalPortalServer/obj/
+src/RehearsalPortalServer/bin/
+.vs/config/applicationhost.config
+.vs/
+src/RehearsalPortalServer/project.lock.json

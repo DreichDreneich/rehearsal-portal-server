@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C7D1394B-E58F-4506-962E-47301C4FCC88}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8642A3E7-A685-4251-BC6B-CA5BDF1DD933}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "RehearsalPortalServer", "src\RehearsalPortalServer\RehearsalPortalServer.xproj", "{06433BF7-3FF7-4C78-A6C7-18E42A7F00F4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{06433BF7-3FF7-4C78-A6C7-18E42A7F00F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06433BF7-3FF7-4C78-A6C7-18E42A7F00F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06433BF7-3FF7-4C78-A6C7-18E42A7F00F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06433BF7-3FF7-4C78-A6C7-18E42A7F00F4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{06433BF7-3FF7-4C78-A6C7-18E42A7F00F4} = {C7D1394B-E58F-4506-962E-47301C4FCC88}
+	EndGlobalSection
+EndGlobal
