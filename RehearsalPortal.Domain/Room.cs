@@ -1,17 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RehearsalPortal.Domain
 {
-    class Room
+    public class Room
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
+
+        public Guid BaseId { get; set; }
+
         public string Name { get; set; }
+
         public int Area { get; set; }
+
         //public string CoverPic { get; set; }
+
         //public string Pics { get; set; }
     }
 }

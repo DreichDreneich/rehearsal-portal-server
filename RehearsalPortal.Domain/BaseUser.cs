@@ -1,16 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RehearsalPortal.Domain
 {
-    class BaseUser
+    public class BaseUser
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
+
         public string Name { get; set; }
-        public IEnumerable<string>[] Phones { get; set; }
+
+        public IEnumerable<string> Phones { get; set; }
+
+        public ICollection<Base> Bases { get; set; }
 
         //public string Pic { get; set; }
     }

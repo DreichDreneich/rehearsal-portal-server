@@ -13,22 +13,55 @@ namespace RehearsalPortal.Controllers
     {
         // GET api/values
         [HttpGet]
-        public IEnumerable<User> Get()
+        public IEnumerable<BaseUser> Get()
         {
-            using (UserContext db = new UserContext())
+            using (var db = new RPContext())
             {
-                User user1 = new User { Name = "Tom", Age = 33 };
-                User user2 = new User { Name = "Sam", Age = 26 };
+                var bu1 = new BaseUser
+                {
+                    Name = "Холдинг мега крутых баз",
+                    Phones = new List<string>()
+                    {
+                        "3563546356",
+                        "5674657456"
+                    },
+                    Bases=new List<Base>()
+                    {
+                        new Base
+                        {
+                            City="Moscow",
+                            Name="Bazza.ru",
+                            Rooms=new List<Room>
+                            {
+                                new Room
+                                {
+                                    Name="Third"
+                                }
+                            }
+                        },
+                        new Base
+                        {
+                            City="Piter",
+                            Name="Hendrix",
+                            Rooms=new List<Room>
+                            {
+                                new Room
+                                {
+                                    Name="First"
+                                },
+                                new Room
+                                {
+                                    Name="Second"
+                                }
+                            }
+                        }
+                    }
+                };
 
-                // добавляем их в бд
-                db.Users.Add(user1);
-                db.Users.Add(user2);
+                db.BaseUsers.Add(bu1);
                 db.SaveChanges();
-                Console.WriteLine("Объекты успешно сохранены");
 
-                // получаем объекты из бд и выводим на консоль
-                var users = db.Users;
-
+                var users = db.BaseUsers;
                 return users.ToList();
             }
         }
@@ -64,6 +97,6 @@ namespace RehearsalPortal.Controllers
 
     public class TestClass
     {
-        public string Name { get; set;}
+        public string Name { get; set; }
     }
 }
