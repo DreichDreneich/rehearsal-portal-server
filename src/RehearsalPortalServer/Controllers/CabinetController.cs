@@ -4,6 +4,7 @@ using RehearsalPortal.Domain;
 
 namespace RehearsalPortal.Controllers
 {
+    [Route("api/[controller]")]
     public class CabinetController : Controller
     {
         private IBaseRepository _baseRepository { get; set; }
@@ -20,5 +21,10 @@ namespace RehearsalPortal.Controllers
             this._baseUserRepository = baseUserRepository;
         }
 
+        [HttpGet("Hello")]
+        public string Hello()
+        {
+            return "Hello";
+        }
     }
 }
