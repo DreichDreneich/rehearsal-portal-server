@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using RehearsalPortal.Domain;
+using RehearsalPortal.Core;
 
 namespace RehearsalPortal
 {
@@ -38,6 +40,11 @@ namespace RehearsalPortal
             services.AddApplicationInsightsTelemetry(Configuration);
 
             services.AddMvc();
+
+            //Регистрация сервисов приложения
+            services.AddScoped<IBaseRepository, BaseRepository>();
+            services.AddScoped<IRoomRepository, RoomRepository>();
+            services.AddScoped<IBaseUserRepository, BaseUserRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline
