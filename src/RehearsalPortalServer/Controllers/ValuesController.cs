@@ -15,55 +15,7 @@ namespace RehearsalPortal.Controllers
         [HttpGet]
         public IEnumerable<BaseUser> Get()
         {
-            using (var db = new RPContext())
-            {
-                var bu1 = new BaseUser
-                {
-                    Name = "Холдинг мега крутых баз",
-                    Phones = new List<string>()
-                    {
-                        "3563546356",
-                        "5674657456"
-                    },
-                    Bases=new List<Base>()
-                    {
-                        new Base
-                        {
-                            City="Moscow",
-                            Name="Bazza.ru",
-                            Rooms=new List<Room>
-                            {
-                                new Room
-                                {
-                                    Name="Third"
-                                }
-                            }
-                        },
-                        new Base
-                        {
-                            City="Piter",
-                            Name="Hendrix",
-                            Rooms=new List<Room>
-                            {
-                                new Room
-                                {
-                                    Name="First"
-                                },
-                                new Room
-                                {
-                                    Name="Second"
-                                }
-                            }
-                        }
-                    }
-                };
-
-                db.BaseUsers.Add(bu1);
-                db.SaveChanges();
-
-                var users = db.BaseUsers;
-                return users.ToList();
-            }
+            return null;
         }
 
         // GET api/values/5

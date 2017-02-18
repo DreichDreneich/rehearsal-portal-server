@@ -5,13 +5,13 @@ using RehearsalPortal.Domain;
 namespace RehearsalPortal.Controllers
 {
     [Route("api/[controller]")]
-    public class CabinetController : Controller
+    public class BaseUserController : Controller
     {
         private IBaseRepository _baseRepository { get; set; }
         private IRoomRepository _roomRepository { get; set; }
         private IBaseUserRepository _baseUserRepository { get; set; }
 
-        public CabinetController(
+        public BaseUserController(
             IBaseRepository baseRepository, 
             IRoomRepository roomRepository, 
             IBaseUserRepository baseUserRepository)
@@ -25,6 +25,12 @@ namespace RehearsalPortal.Controllers
         public string Hello()
         {
             return "Hello";
+        }
+
+        [HttpGet("{id}")]
+        public BaseUser GetBaseUserById(System.Guid Id)
+        {
+            return _baseUserRepository.GetById(Id);
         }
     }
 }
