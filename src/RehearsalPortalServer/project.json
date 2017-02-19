@@ -2,6 +2,7 @@
   "dependencies": {
     "EntityFramework": "6.1.3",
     "Microsoft.ApplicationInsights.AspNetCore": "2.0.0-beta1",
+    "Microsoft.AspNetCore.Authentication.Cookies": "1.0.0",
     "Microsoft.AspNetCore.Mvc": "1.1.0",
     "Microsoft.AspNetCore.Routing": "1.1.0",
     "Microsoft.AspNetCore.Server.IISIntegration": "1.1.0",

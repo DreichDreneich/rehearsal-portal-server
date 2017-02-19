@@ -15,5 +15,6 @@ namespace RehearsalPortal.Core
         public DbSet<Base> Bases { get; set; }
         public DbSet<BaseUser> BaseUsers { get; set; }
         public DbSet<Room> Rooms { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }
