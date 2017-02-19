@@ -19,5 +19,13 @@ namespace RehearsalPortal.Domain
         public DateTime RegistrationDate { get; set; }
 
         public DateTime LastLoginDate { get; set; }
+
+        //////////////////////////////////////////////////////
+
+        public ICollection<Guid> BandsParticipant { get; set; }
+
+        public ICollection<Guid> BaseUsers { get; set; }
+
+        public ICollection<Guid> BandUsers { get; set; }
     }
 }

@@ -15,6 +15,9 @@ namespace RehearsalPortal.Domain
 
         public ICollection<Base> Bases { get; set; }
 
+        //ToDo убрать nullable
+        public Guid? UserId { get; set; }
+
         //public string Pic { get; set; }
     }
 }
