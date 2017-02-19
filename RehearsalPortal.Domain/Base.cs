@@ -19,7 +19,7 @@ namespace RehearsalPortal.Domain
 
         public string City { get; set; }
 
-        public ICollection<Room> Rooms { get; set; }
+        public virtual ICollection<Room> Rooms { get; set; }
 
         //public string Pic { get; set; }
     }

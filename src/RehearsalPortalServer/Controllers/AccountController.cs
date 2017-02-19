@@ -15,9 +15,8 @@ namespace RehearsalPortal.Controllers
     {
         private RPContext db = new RPContext();
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<Guid?> Login(LoginViewModel model)
+        [HttpPost("login")]
+        public async Task<UserViewModel> Login([FromBody]LoginViewModel model)
         {
             User user = await db.Users.FirstOrDefaultAsync(u => 
                 (u.Email == model.LoginObject || 
@@ -28,14 +27,20 @@ namespace RehearsalPortal.Controllers
             if (user != null)
             {
                 await Authenticate(model.LoginObject); // аутентификация
-                return user.Id;
+
+                return new UserViewModel
+                {
+                    Id = user.Id,
+                    Login = user.Login,
+                    Email = user.Email
+                };
             }
 
             return null;
         }
 
         [HttpPost("register")]
-        public async Task<User> Register([FromBody]RegisterViewModel model)
+        public async Task<UserViewModel> Register([FromBody]RegisterViewModel model)
         {
             var user = await db.Users.FirstOrDefaultAsync(u => 
                 (u.Email == model.Email) || (u.Login == model.Login)
@@ -54,11 +59,16 @@ namespace RehearsalPortal.Controllers
 
                 await Authenticate(model.Email); // аутентификация
 
-                return user;
+                return new UserViewModel
+                {
+                    Id = user.Id,
+                    Login = user.Login,
+                    Email = user.Email
+                };
             }
             else
             {
-                return user;
+                return null;
             }
         }
 
@@ -81,12 +91,6 @@ namespace RehearsalPortal.Controllers
         public async void Logout()
         {
             await HttpContext.Authentication.SignOutAsync("Cookies");
-        }
-
-        [HttpGet("logout1")]
-        public void Logout1()
-        {
-            return;
         }
     }
 }

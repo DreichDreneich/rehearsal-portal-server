@@ -9,8 +9,8 @@ namespace RehearsalPortal.Core
 {
     public class BasicRepository<T> : IBasicRepository<T> where T: BaseEntity
     {
-        private readonly RPContext context;
-        private IDbSet<T> entities;
+        protected readonly RPContext context;
+        protected IDbSet<T> entities;
         public BasicRepository()
         {
             context = new RPContext();

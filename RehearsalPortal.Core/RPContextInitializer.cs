@@ -14,10 +14,12 @@ namespace RehearsalPortal.Core
                 {
                     Id = new System.Guid("8E00AD00-FBB6-4BA8-9CED-9A6DF3B51F89"),
                     Name = "Hendrix",
+
                     Phones = new List<string>
                     {
                         "89379876542", "80876753723"
                     },
+                    UserId = new System.Guid("B40F89A6-27AA-4A7D-9D1E-5665E2958C89"),
                     AddedDate = System.DateTime.Now,
                     ModifiedDate = System.DateTime.Now
                 },
@@ -29,12 +31,37 @@ namespace RehearsalPortal.Core
                     {
                         "89379897154"
                     },
+                    UserId = new System.Guid("B40F89A6-8521-4A7D-9D1E-5455E2958C89"),
                     AddedDate = System.DateTime.Now,
                     ModifiedDate = System.DateTime.Now
                 },
             };
 
             context.BaseUsers.AddRange(baseUsers);
+
+            var users = new List<User>
+            {
+                new User
+                {
+                    Id = new System.Guid("B40F89A6-27AA-4A7D-9D1E-5665E2958C89"),
+                    Email = "alan6161@yandex.ru",
+                    Login = "hendrix",
+                    Password = "11111",
+                    LastLoginDate = System.DateTime.Now,
+                    RegistrationDate = System.DateTime.Now
+                },
+                new User
+                {
+                    Id = new System.Guid("B40F89A6-8521-4A7D-9D1E-5455E2958C89"),
+                    Email = "alan6161@yandex.ru",
+                    Login = "bazza",
+                    Password = "11111",
+                    LastLoginDate = System.DateTime.Now,
+                    RegistrationDate = System.DateTime.Now
+                }
+            };
+
+            context.Users.AddRange(users);
 
             var bases = new List<Base> {
                 new Base {

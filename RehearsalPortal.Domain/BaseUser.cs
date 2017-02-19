@@ -13,10 +13,10 @@ namespace RehearsalPortal.Domain
 
         public IEnumerable<string> Phones { get; set; }
 
-        public ICollection<Base> Bases { get; set; }
+        public virtual ICollection<Base> Bases { get; set; }
 
         //ToDo убрать nullable
-        public Guid? UserId { get; set; }
+        public Guid UserId { get; set; }
 
         //public string Pic { get; set; }
     }

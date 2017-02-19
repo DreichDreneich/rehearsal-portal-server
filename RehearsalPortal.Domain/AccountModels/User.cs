@@ -22,10 +22,10 @@ namespace RehearsalPortal.Domain
 
         //////////////////////////////////////////////////////
 
-        public ICollection<Guid> BandsParticipant { get; set; }
+        //public IList<BandUser> BandsParticipant { get; set; }
 
-        public ICollection<Guid> BaseUsers { get; set; }
+        public virtual ICollection<BaseUser> BaseUsers { get; set; }
 
-        public ICollection<Guid> BandUsers { get; set; }
+        public virtual ICollection<BandUser> BandUsers { get; set; }
     }
 }

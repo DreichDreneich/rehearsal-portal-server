@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="AccountModels\LoginViewModel.cs" />
     <Compile Include="AccountModels\RegisterViewModel.cs" />
+    <Compile Include="AccountModels\UserViewModel.cs" />
     <Compile Include="BandUser.cs" />
     <Compile Include="Base.cs" />
     <Compile Include="BaseEntity.cs" />

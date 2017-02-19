@@ -9,6 +9,8 @@ namespace RehearsalPortal.Domain
 
         public string Name { get; set; }
 
+        public Guid UserId { get; set; }
+
         public ICollection<User> Participants { get; set;}
     }
 }
